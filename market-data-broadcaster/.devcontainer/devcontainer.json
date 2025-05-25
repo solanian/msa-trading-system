@@ -1,0 +1,19 @@
+{
+    "name": "market-data-broadcaster-dev",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": ".."
+    },
+    "workspaceFolder": "/workspace/market-data-broadcaster",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "go.toolsManagement.autoUpdate": true
+        },
+        "extensions": [
+          "golang.go"
+        ]
+      }
+    },
+    "remoteUser": "root"
+  }
