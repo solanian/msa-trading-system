@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  nats:
+    container_name: nats
+    image: nats:2.10
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+
+  market_data_broadcaster:
+    container_name: market_data_broadcaster
+    build: ./market_data_broadcaster
+    dockerfile: Dockerfile
+    environment:
+      - HANTOO_API_KEY=${HANTOO_API_KEY}
+      - HANTOO_API_SECRET=${HANTOO_API_SECRET}
+    depends_on:
+      - nats
+    restart: always
